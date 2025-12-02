@@ -1,7 +1,7 @@
-# MatrixProject – Introduction to Robotics
+# MatrixProject - Introduction to Robotics
 
-## Robotics Matrix Game Project – University of Bucharest, FMI  
-### Introduction to Robotics (2025 – 2026)
+## Robotics Matrix Game Project - University of Bucharest, FMI  
+### Introduction to Robotics (2025 - 2026)
 
 Welcome to my LED Matrix game project developed for the **Introduction to Robotics** course!  
 This repository contains the full implementation of my **8x8 LED Matrix Game**, built using **Arduino**, an **LCD display**, and **joystick input**, following the official project requirements.
@@ -14,7 +14,7 @@ This project will evolve throughout the semester, starting from a basic interact
 - **University:** University of Bucharest  
 - **Faculty:** Faculty of Mathematics and Informatics  
 - **Course:** Introduction to Robotics  
-- **Academic Year:** 2025–2026, Semester 1
+- **Academic Year:** 2025-2026, Semester 1
 ---
 
 ## Project Overview
