@@ -10,7 +10,7 @@ This project will evolve throughout the semester, starting from a basic interact
 
 ---
 
-- **Student** Neamtu Alexandra  
+- **Student:** Neamtu Alexandra  
 - **University:** University of Bucharest  
 - **Faculty:** Faculty of Mathematics and Informatics  
 - **Course:** Introduction to Robotics  
