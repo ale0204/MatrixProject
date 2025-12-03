@@ -22,7 +22,8 @@ Create an interactive LED matrix demo with menu navigation for the "Introduction
 | 8x8 LED Matrix (MAX7219) | 1 | Game display interface |
 | 16x2 LCD Display | 1 | Menu and status display |
 | Joystick Module (X, Y, SW) | 1 | Navigation and drawing control |
-| Resistors (220Ω) | 1 | LCD backlight control |
+| Resistors (1K) | 1 | Matrix |
+| Potentiometer | 1 | LCD brightness control |
 | Breadboard | 1 | Circuit assembly |
 | Jumper Wires | Multiple | Connections |
 
