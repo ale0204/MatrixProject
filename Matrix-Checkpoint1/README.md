@@ -66,7 +66,7 @@ The circuit connects four main components to the Arduino:
 
 **Hardware Setup:**
 
-![Hardware Setup Photo](matrix_checkpoint1_setup.jpg)
+![Hardware Setup Photo](matrix_checkpoint1_setup.png)
 
 *Figure: Physical circuit assembled on breadboard showing Arduino Uno, MAX7219 LED matrix, 16x2 LCD display, joystick module, and wiring.*
 
@@ -155,7 +155,7 @@ enum class LedState : byte
 };
 ```
 
-When the button is pressed, the current LED cycles: **ON → SLOW → FAST → OFF → ON → ...**
+When the button is pressed, the current LED cycles: **ON -> SLOW -> FAST -> OFF -> ON -> ...**
 
 #### Cursor Movement with Wrap-Around
 
@@ -178,7 +178,7 @@ void GameDemo::moveCursor(int8_t dx, int8_t dy)
 }
 ```
 
-This ensures the cursor seamlessly moves from edge to opposite edge (column 7 → 0, row 0 → 7, etc.).
+This ensures the cursor seamlessly moves from edge to opposite edge (column 7 -> 0, row 0 -> 7, etc.).
 
 #### Non-Blocking Blink Implementation
 
@@ -282,16 +282,8 @@ This checkpoint demonstrates fundamental embedded systems concepts:
 
 **State Machine Design:** Clean phase transitions organize application flow  
 **Hardware Abstraction:** Wrapper classes isolate hardware-specific code  
-**Non-Blocking Code:** All timing uses `millis()` for concurrent operations  
 **Clean Code Practices:** Eliminated magic numbers, modular architecture  
 **Input Handling:** Deadzone filtering and button debouncing for reliable input  
 **Modular Architecture:** Each component in separate files for maintainability
 
 ---
-
-### Author
-
-**Name:** Alexandra  
-**Course:** Introduction to Robotics, Unibuc 2025-2026  
-**GitHub:** [ale0204](https://github.com/ale0204)
-
