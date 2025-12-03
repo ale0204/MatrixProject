@@ -129,7 +129,7 @@ void GameDemo::resetExit()
 
 void GameDemo::moveCursor(int8_t dx, int8_t dy)
 {
-    // Turn off LED at current position
+    // Turn off LED at current position, before moving
     ledStates[cursorY][cursorX] = LedState::Off;
 
     // Move cursor (wrap around edges)
@@ -176,9 +176,6 @@ void GameDemo::renderMatrix(unsigned long currentTime)
         {
             bool ledOn = false;
             LedState state = ledStates[y][x];
-
-            // Check if this is the cursor position
-            bool isCursor = (x == cursorX && y == cursorY);
 
             switch (state)
             {
