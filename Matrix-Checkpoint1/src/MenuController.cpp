@@ -1,8 +1,8 @@
 #include "MenuController.h"
 
-MenuController::MenuController(LCDDisplay& lcdDisplay, Joystick& joystick)
+MenuController::MenuController(LCDDisplay& lcdDisplay, Joystick& joystickRef)
     : lcd(&lcdDisplay),
-      joy(&joystick),
+      joystick(&joystickRef),
       currentItem(MenuItem::StartGame),
       pendingAction(MenuAction::None),
       needsRedraw(true)
@@ -19,22 +19,22 @@ void MenuController::init()
 void MenuController::update()
 {
     // Check for joystick navigation (with movement cooldown)
-    if (joy->isMovementReady())
+    if (joystick->isMovementReady())
     {
-        JoystickDirection dir = joy->getDirection();
+        JoystickDirection direction = joystick->getDirection();
 
-        if (dir == JoystickDirection::UP)
+        if (direction == JoystickDirection::UP)
         {
             navigateUp();
         }
-        else if (dir == JoystickDirection::DOWN)
+        else if (direction == JoystickDirection::DOWN)
         {
             navigateDown();
         }
     }
 
     // Check for button press to select
-    if (joy->wasButtonPressed())
+    if (joystick->wasButtonPressed())
     {
         selectItem();
     }

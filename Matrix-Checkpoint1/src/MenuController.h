@@ -57,7 +57,7 @@ public:
 
 private:
     LCDDisplay* lcd;
-    Joystick* joy;
+    Joystick* joystick;
 
     MenuItem currentItem;
     MenuAction pendingAction;
