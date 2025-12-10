@@ -203,7 +203,7 @@ All sounds use the `BuzzerPattern` system with proper note durations and frequen
 
 **Hardware Setup:**
 
-![Hardware Setup Photo - To be added]()
+![Hardware Setup Photo](hardware.png)
 
 *Figure: Physical circuit with Arduino Uno, MAX7219 LED matrix, LCD display, joystick, and buzzer.*
 
