@@ -110,7 +110,7 @@ Implementation of "The Miner" - a complete 16x16 matrix-based adventure game for
 - **Level Completion:** Reach EXIT to advance to next level (plays victory fanfare)
 
 **4. Level Progression:**
-- Level 1 → Level 2 → Level 3 → Victory
+- Level 1 -> Level 2 -> Level 3 -> Victory
 - Each level displays "LEVEL COMPLETE!" message
 - Automatic progression to next level
 - After Level 3: "YOU WIN! All levels done"
@@ -139,10 +139,10 @@ The game uses a **camera viewport** to display 8x8 sections of the 16x16 world:
 ```
 
 The `CameraController` automatically tracks the player and switches rooms:
-- Player at (3,5) → Camera at (0,0) shows NW room
-- Player at (10,3) → Camera at (8,0) shows NE room
-- Player at (5,12) → Camera at (0,8) shows SW room
-- Player at (14,11) → Camera at (8,8) shows SE room
+- Player at (3,5) -> Camera at (0,0) shows NW room
+- Player at (10,3) -> Camera at (8,0) shows NE room
+- Player at (5,12) -> Camera at (0,8) shows SW room
+- Player at (14,11) -> Camera at (8,8) shows SE room
 
 ---
 
@@ -151,11 +151,11 @@ The `CameraController` automatically tracks the player and switches rooms:
 The game features **non-blocking audio patterns** using the buzzer:
 
 **Sound Effects:**
-- **Menu Select:** Double beep (C5 → E5) when starting game
-- **Gold Collection:** Happy chirp (C5 → E5) when collecting gold
-- **Room Transition:** Brief ascending tone (G4 → C5) when entering new room
-- **Level Complete:** Victory fanfare (C5 → E5 → G5) when reaching exit
-- **Game Won:** Epic melody (C5 → E5 → G5 → C6) after completing all levels
+- **Menu Select:** Double beep (C5 -> E5) when starting game
+- **Gold Collection:** Happy chirp (C5 -> E5) when collecting gold
+- **Room Transition:** Brief ascending tone (G4 -> C5) when entering new room
+- **Level Complete:** Victory fanfare (C5 -> E5 -> G5) when reaching exit
+- **Game Won:** Epic melody (C5 -> E5 -> G5 -> C6) after completing all levels
 - **Level Load:** Confirmation beep (1000Hz) when loading new level
 
 All sounds use the `BuzzerPattern` system with proper note durations and frequencies defined in `Constants.h`.
@@ -182,33 +182,33 @@ All sounds use the `BuzzerPattern` system with proper note durations and frequen
 **Pin Configuration:**
 
 *LED Matrix (MAX7219):*
-- DIN → Pin 12
-- CLK → Pin 11
-- LOAD (CS) → Pin 10
-- VCC → 5V
-- GND → GND
+- DIN -> Pin 12
+- CLK -> Pin 11
+- LOAD (CS) -> Pin 10
+- VCC -> 5V
+- GND -> GND
 
 *LCD Display (4-bit mode):*
-- RS → Pin 9
-- EN → Pin 8
-- D4 → Pin 7
-- D5 → Pin 6
-- D6 → Pin 5
-- D7 → Pin 4
-- VCC → 5V
-- GND → GND
-- V0 → Potentiometer (contrast)
+- RS -> Pin 9
+- EN -> Pin 8
+- D4 -> Pin 7
+- D5 -> Pin 6
+- D6 -> Pin 5
+- D7 -> Pin 4
+- VCC -> 5V
+- GND -> GND
+- V0 -> Potentiometer (contrast)
 
 *Joystick:*
-- VRx (X-Axis) → Pin A0
-- VRy (Y-Axis) → Pin A1
-- SW (Button) → Pin A2
-- VCC → 5V
-- GND → GND
+- VRx (X-Axis) -> Pin A0
+- VRy (Y-Axis) -> Pin A1
+- SW (Button) -> Pin A2
+- VCC -> 5V
+- GND -> GND
 
 *Buzzer:*
-- Signal → Pin 3
-- GND → GND
+- Signal -> Pin 3
+- GND -> GND
 
 #### Physical Implementation
 
