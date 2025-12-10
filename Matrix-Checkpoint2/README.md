@@ -125,18 +125,7 @@ Implementation of "The Miner" - a complete 16x16 matrix-based adventure game for
 ### Technical Implementation
 
 #### Camera Viewport System
-The game uses a **camera viewport** to display 8x8 sections of the 16x16 world:
-
-```
-16x16 World divided into 4 rooms:
-┌────────┬────────┐
-│ NW     │ NE     │  Each room = 8x8 tiles
-│ (0,0)  │ (8,0)  │  Camera shows ONE room at a time
-├────────┼────────┤
-│ SW     │ SE     │  Camera switches when player moves
-│ (0,8)  │ (8,8)  │  between rooms
-└────────┴────────┘
-```
+The game uses a **camera viewport** to display 8x8 sections of the 16x16 world
 
 The `CameraController` automatically tracks the player and switches rooms:
 - Player at (3,5) -> Camera at (0,0) shows NW room
@@ -284,16 +273,16 @@ Matrix-Checkpoint2/
 
 ### Game Features
 
-✅ **Complete Menu System:** Main menu with joystick button to start
-✅ **3 Progressive Levels:** Increasing complexity and room count
-✅ **16x16 World Map:** 4 rooms with camera viewport
-✅ **Gold Collection:** Scattered collectibles with sound feedback
-✅ **Multi-Room Navigation:** Seamless room transitions
-✅ **Sound Effects:** Menu, collection, transition, victory sounds
-✅ **LCD Information:** Current level and gold count display
-✅ **Clean Code:** No magic numbers, all constants defined
-✅ **Modular Architecture:** Each system in separate class
-✅ **Non-Blocking Code:** No delay() calls in main loop
+ **Complete Menu System:** Main menu with joystick button to start
+ **3 Progressive Levels:** Increasing complexity and room count
+ **16x16 World Map:** 4 rooms with camera viewport
+ **Gold Collection:** Scattered collectibles with sound feedback
+ **Multi-Room Navigation:** Seamless room transitions
+ **Sound Effects:** Menu, collection, transition, victory sounds
+ **LCD Information:** Current level and gold count display
+ **Clean Code:** No magic numbers, all constants defined
+ **Modular Architecture:** Each system in separate class
+ **Non-Blocking Code:** No delay() calls in main loop
 
 ---
 
@@ -323,7 +312,7 @@ namespace MapConstants { WORLD_SIZE, ROOM_SIZE, LEVEL_1/2/3 }
 
 ---
 
-### Future Enhancements (Checkpoint 3)
+### Future Enhancements
 
 Planned features for the final checkpoint:
 
@@ -371,8 +360,3 @@ This checkpoint demonstrates advanced embedded systems concepts:
 **Input Handling:** Debounced buttons and analog joystick with deadzone  
 
 ---
-
-**Author:** Alexandra  
-**Course:** Introduction to Robotics, University of Bucharest  
-**Date:** December 2025  
-**Checkpoint:** 2 of 3
