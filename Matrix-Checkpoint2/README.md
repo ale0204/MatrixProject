@@ -339,7 +339,7 @@ Planned features for the final checkpoint:
 ### Media
 
 **Demo Video:**  
-[Watch on YouTube]()
+[Watch on YouTube](https://youtu.be/jsNcvEt_50w?si=z28a3YvNzt85z94v)
 
 **Source Code:**  
 [View on GitHub](https://github.com/ale0204/MatrixProject/tree/main/Matrix-Checkpoint2/src)
