@@ -89,6 +89,36 @@ Watch the full gameplay and menu demonstration here:
 
 The video includes complete walkthrough of all game features, menu navigation, settings configuration, and gameplay.
 
+## Implementation Details
+
+### Project Structure
+
+```
+Matrix-Final/
+├── src/
+│   ├── proiect1.ino              # Arduino main entry point
+│   ├── Constants.h                # Pin definitions and game constants
+│   │
+│   ├── GameEngine.cpp/h           # Main game loop and state management
+│   ├── Map.cpp/h                  # 16x16 world tile storage
+│   ├── Player.cpp/h               # Player movement and collision
+│   ├── CameraController.cpp/h     # Viewport management
+│   ├── ActiveExplosive.cpp/h      # Explosive timing and destruction
+│   │
+│   ├── MatrixDisplay.cpp/h        # LED matrix rendering
+│   ├── LCDDisplay.cpp/h           # LCD text display
+│   ├── Joystick.cpp/h             # Input handling
+│   ├── Buzzer.cpp/h               # Sound system
+│   ├── PhotoResistor.cpp/h        # Light sensor
+│   ├── PushButton.cpp/h           # Button debouncing
+│   │
+│   ├── HighscoreManager.cpp/h     # Score tracking
+│   ├── GameSettings.cpp/h         # Game configuration
+│   └── SystemSettings.cpp/h       # Hardware settings
+│
+└── README.md
+```
+
 ## Code Structure
 
 The project is organized into modular components for maintainability and clarity:
