@@ -76,9 +76,9 @@ Press the Exit Button or long-press the joystick in settings to save and return 
 
 ### Pin Configuration
 - **Matrix**: DIN=12, CLK=11, LOAD=10
-- **LCD**: RS=2, E=3, D4=4, D5=5, D6=6, D7=7, LED=9 (PWM)
+- **LCD**: RS=2, E=10, D4=4, D5=5, D6=6, D7=7, LED=9 (PWM)
 - **Joystick**: VRx=A0, VRy=A1, SW=8
-- **Buzzer**: Pin 13 (shared with built-in LED)
+- **Buzzer**: Pin 3 
 - **Photoresistor**: A3
 - **Exit Button**: Pin 13
 
