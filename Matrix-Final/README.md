@@ -118,6 +118,91 @@ The project is organized into modular components for maintainability and clarity
 
 The architecture separates concerns effectively: game logic, hardware interaction, and data persistence are handled by distinct modules, making the codebase easy to understand and modify.
 
+### Key Code Snippets
+
+**Proximity Detection for Hidden Gold** (Player.cpp)
+```cpp
+bool Player::isNearHiddenTreasure() const {
+    for (int8_t dy = -1; dy <= 1; dy++) {
+        for (int8_t dx = -1; dx <= 1; dx++) {
+            if (dx == 0 && dy == 0) continue;
+            int16_t checkX = x + dx;
+            int16_t checkY = y + dy;
+            if (checkX >= 0 && checkX < 16 && checkY >= 0 && checkY < 16) {
+                if (map->getTile(checkX, checkY) == TileType::HIDDEN_GOLD) {
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}
+```
+
+**Light-Based Bomb Visibility** (MatrixDisplay.cpp)
+```cpp
+void MatrixDisplay::draw(Map& map, Player& player, CameraController& camera) {
+    bool hasLight = photoResistor.isBright();
+    
+    for (uint8_t y = 0; y < 8; y++) {
+        for (uint8_t x = 0; x < 8; x++) {
+            TileType tile = map.getTile(worldX, worldY);
+            bool shouldLight = false;
+            
+            if (tile == TileType::BOMB) {
+                shouldLight = hasLight;  // Bombs only visible with light
+            } else if (tile == TileType::GOLD || tile == TileType::WALL) {
+                shouldLight = true;
+            }
+            setLed(x, y, shouldLight);
+        }
+    }
+}
+```
+
+**Explosive Cross-Pattern Destruction** (GameEngine.cpp)
+```cpp
+void GameEngine::handleExplosion() {
+    const int8_t explosionPattern[5][2] = {
+        {0, 0}, {-1, 0}, {1, 0}, {0, -1}, {0, 1}
+    };
+    
+    for (int i = 0; i < 5; i++) {
+        int16_t targetX = ex + explosionPattern[i][0];
+        int16_t targetY = ey + explosionPattern[i][1];
+        
+        TileType tile = map.getTile(targetX, targetY);
+        if (tile != TileType::EXIT && tile != TileType::DOOR && 
+            tile != TileType::HIDDEN_GOLD) {
+            map.setTile(targetX, targetY, TileType::EMPTY);
+        }
+    }
+    
+    // Reveal hidden gold in adjacent walls
+    for (adjacent walls) {
+        if (map.getTile(nx, ny) == TileType::HIDDEN_GOLD) {
+            map.setTile(nx, ny, TileType::GOLD);
+        }
+    }
+}
+```
+
+**Camera Viewport Management** (CameraController.cpp)
+```cpp
+void CameraController::update() {
+    uint8_t px = player->getX();
+    uint8_t py = player->getY();
+    
+    // Snap camera to 8x8 room boundaries
+    cameraX = (px / 8) * 8;
+    cameraY = (py / 8) * 8;
+    
+    // Clamp to world bounds
+    if (cameraX + 8 > 16) cameraX = 8;
+    if (cameraY + 8 > 16) cameraY = 8;
+}
+```
+
 ## Features Implemented
 - 4 progressive levels with unique layouts
 - EEPROM persistent storage for settings and highscores
