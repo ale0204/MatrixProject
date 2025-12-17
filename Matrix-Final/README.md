@@ -4,7 +4,7 @@
 
 This project draws inspiration from "The Wisdom of the Elders" side mission in Red Dead Redemption 2, my favorite game. In that mission, Arthur Morgan investigates a mysterious curse affecting the people of Butcher Creek. The investigation leads him to Elysian Pool and into an abandoned mine where toxic waste and arsenic have been poisoning the water supply.
 
-What captivated me most was the mine exploration sequence where Arthur must use explosives to clear blocked paths while searching for valuables scattered throughout the cave. Although this Arduino game is not a direct adaptation of RDR2, I transformed that atmospheric mine exploration concept into an 8x8 LED matrix puzzle game, capturing the essence of navigating dark tunnels, collecting gold, and using explosives strategically.
+What captivated me most was the mine exploration sequence where Arthur must use explosives to clear blocked paths while searching for valuables scattered throughout the cave. Although this Arduino game doesnt tie with RDR2's story, I transformed that atmospheric mine exploration concept into an 8x8 LED matrix puzzle game, capturing the essence of navigating dark tunnels, collecting gold, and using explosives strategically.
 
 ## Game Description
 
