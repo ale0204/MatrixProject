@@ -123,12 +123,13 @@ The architecture separates concerns effectively: game logic, hardware interactio
 **Proximity Detection for Hidden Gold** (Player.cpp)
 ```cpp
 bool Player::isNearHiddenTreasure() const {
-    for (int8_t dy = -1; dy <= 1; dy++) {  // -1 = up, 0 = same row, 1 = down
-        for (int8_t dx = -1; dx <= 1; dx++) {  // -1 = left, 0 = same col, 1 = right
-            if (dx == 0 && dy == 0) continue;  // Skip player's current position
+    for (int8_t dy = -1; dy <= 1; dy++) {
+        for (int8_t dx = -1; dx <= 1; dx++) {
+            if (dx == 0 && dy == 0) continue;
             int16_t checkX = x + dx;
             int16_t checkY = y + dy;
-            if (checkX >= 0 && checkX < 16 && checkY >= 0 && checkY < 16) {  // 16 = world size
+            if (checkX >= 0 && checkX < MapConstants::WORLD_SIZE &&  // WORLD_SIZE = 16
+                checkY >= 0 && checkY < MapConstants::WORLD_SIZE) {
                 if (map->getTile(checkX, checkY) == TileType::HIDDEN_GOLD) {
                     return true;
                 }
@@ -144,8 +145,8 @@ bool Player::isNearHiddenTreasure() const {
 void MatrixDisplay::draw(Map& map, Player& player, CameraController& camera) {
     bool hasLight = photoResistor.isBright();
     
-    for (uint8_t y = 0; y < 8; y++) {  // 8 = matrix height
-        for (uint8_t x = 0; x < 8; x++) {  // 8 = matrix width
+    for (uint8_t y = 0; y < MatrixConstants::SIZE; y++) {  // SIZE = 8
+        for (uint8_t x = 0; x < MatrixConstants::SIZE; x++) {  // SIZE = 8
             TileType tile = map.getTile(worldX, worldY);
             bool shouldLight = false;
             
@@ -163,7 +164,7 @@ void MatrixDisplay::draw(Map& map, Player& player, CameraController& camera) {
 **Explosive Cross-Pattern Destruction** (GameEngine.cpp)
 ```cpp
 void GameEngine::handleExplosion() {
-    const int8_t explosionPattern[5][2] = {  // 5 = center + 4 directions
+    const int8_t explosionPattern[GameplayConstants::EXPLOSION_PATTERN_SIZE][2] = {  // EXPLOSION_PATTERN_SIZE = 5
         {0, 0},    // Center
         {-1, 0},   // Left
         {1, 0},    // Right
@@ -171,7 +172,7 @@ void GameEngine::handleExplosion() {
         {0, 1}     // Down
     };
     
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < GameplayConstants::EXPLOSION_PATTERN_SIZE; i++) {  // EXPLOSION_PATTERN_SIZE = 5
         int16_t targetX = ex + explosionPattern[i][0];
         int16_t targetY = ey + explosionPattern[i][1];
         
@@ -197,11 +198,11 @@ void CameraController::update() {
     uint8_t px = player->getX();
     uint8_t py = player->getY();
     
-    cameraX = (px / 8) * 8;  // 8 = viewport size, snaps to room boundaries
-    cameraY = (py / 8) * 8;
+    cameraX = (px / MatrixConstants::SIZE) * MatrixConstants::SIZE;  // SIZE = 8
+    cameraY = (py / MatrixConstants::SIZE) * MatrixConstants::SIZE;  // SIZE = 8
     
-    if (cameraX + 8 > 16) cameraX = 8;  // 16 = world size, 8 = viewport size
-    if (cameraY + 8 > 16) cameraY = 8;
+    if (cameraX + MatrixConstants::SIZE > MapConstants::WORLD_SIZE) cameraX = MatrixConstants::SIZE;  // SIZE = 8, WORLD_SIZE = 16
+    if (cameraY + MatrixConstants::SIZE > MapConstants::WORLD_SIZE) cameraY = MatrixConstants::SIZE;  // SIZE = 8, WORLD_SIZE = 16
 }
 ```
 
