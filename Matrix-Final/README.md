@@ -206,6 +206,68 @@ void CameraController::update() {
 }
 ```
 
+**EEPROM Highscore Persistence** (HighscoreManager.cpp)
+
+Saves top 3 scores permanently using Arduino's EEPROM memory.
+```cpp
+void HighscoreManager::saveToEEPROM() {
+    uint16_t addr = HighscoreConstants::EEPROM_START_ADDR;
+    EEPROM.update(addr++, HighscoreConstants::MAGIC_BYTE);  // MAGIC_BYTE = 0xB7 (validation marker)
+    
+    for (uint8_t i = 0; i < HighscoreConstants::MAX_HIGHSCORE_ENTRIES; i++) {  // MAX_HIGHSCORE_ENTRIES = 3
+        EEPROM.update(addr++, entries[i].name[0]);
+        EEPROM.update(addr++, entries[i].name[1]);
+        EEPROM.update(addr++, entries[i].name[2]);
+        EEPROM.update(addr++, (entries[i].score >> 8) & 0xFF);  // High byte
+        EEPROM.update(addr++, entries[i].score & 0xFF);  // Low byte
+        EEPROM.update(addr++, entries[i].level);
+    }
+}
+```
+
+**Non-Blocking Explosive Timer** (GameEngine.cpp)
+
+Handles explosive countdown without freezing gameplay using millis() timing.
+```cpp
+void GameEngine::update() {
+    unsigned long currentTime = millis();
+    
+    if (activeExplosive.isActive() && 
+        explosivePlacedTime != 0 &&
+        currentTime >= explosivePlacedTime &&
+        (currentTime - explosivePlacedTime >= ExplosiveConstants::EXPLOSION_DELAY_MS)) {  // EXPLOSION_DELAY_MS = 5000
+        handleExplosion();
+    }
+    
+    // Explosive blink animation
+    if (activeExplosive.isActive()) {
+        bool blink = (matrixDisplay.getFrameCounter() % GameplayConstants::EXPLOSIVE_BLINK_CYCLE  // EXPLOSIVE_BLINK_CYCLE = 12
+                      < GameplayConstants::EXPLOSIVE_BLINK_ON_FRAMES);  // EXPLOSIVE_BLINK_ON_FRAMES = 6
+        matrixDisplay.setLed(localX, localY, blink);
+    }
+}
+```
+
+**Photoresistor Smoothing** (PhotoResistor.cpp)
+
+Averages multiple readings to reduce sensor noise for stable bomb detection.
+```cpp
+void PhotoResistor::update() {
+    rawValue = analogRead(PhotoResistorPins::SENSOR_PIN);  // SENSOR_PIN = A3
+    
+    totalSum -= readings[readIndex];
+    readings[readIndex] = rawValue;
+    totalSum += rawValue;
+    readIndex = (readIndex + 1) % PhotoResistorConstants::SMOOTHING_SAMPLES;  // SMOOTHING_SAMPLES = 10
+    
+    smoothedValue = totalSum / PhotoResistorConstants::SMOOTHING_SAMPLES;  // Running average
+}
+
+bool PhotoResistor::isBright() const {
+    return smoothedValue > brightThreshold;  // brightThreshold = 700 (default)
+}
+```
+
 ## Features Implemented
 - 4 progressive levels with unique layouts
 - EEPROM persistent storage for settings and highscores
