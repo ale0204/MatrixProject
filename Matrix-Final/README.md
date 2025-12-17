@@ -129,9 +129,3 @@ The architecture separates concerns effectively: game logic, hardware interactio
 - PWM brightness control for both LCD and matrix
 - Debounced input handling with long-press detection
 - Room-based camera system with transition sounds
-
----
-
-**Author**: Alexandra Neamtu  
-**Course**: Robotics, Year 3  
-**Date**: December 2024
