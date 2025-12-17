@@ -71,8 +71,8 @@ Press the Exit Button or long-press the joystick in settings to save and return 
 
 ## Hardware Setup
 
-![Hardware Photo](placeholder_image.jpg)
-*Hardware photo will be added soon*
+![Hardware Photo](hardware_matrix.png)
+*Hardware photo of the board*
 
 ### Pin Configuration
 - **Matrix**: DIN=12, CLK=11, LOAD=10
