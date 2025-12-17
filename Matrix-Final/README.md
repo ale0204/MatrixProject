@@ -87,7 +87,7 @@ Press the Exit Button or long-press the joystick in settings to save and return 
 Watch the full gameplay and menu demonstration here:
 [https://youtu.be/H0vetHM-Wng?si=7Vo4IzWAbMuWqmax](https://youtu.be/H0vetHM-Wng?si=7Vo4IzWAbMuWqmax)
 
-The video includes complete walkthrough of all game features, menu navigation, settings configuration, and gameplay across all four levels.
+The video includes complete walkthrough of all game features, menu navigation, settings configuration, and gameplay.
 
 ## Code Structure
 
