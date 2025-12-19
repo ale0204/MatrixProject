@@ -594,7 +594,7 @@ bool PhotoResistor::isBright() const {
 
 ## Final Thoughts
 
-Working on this project has been an incredibly rewarding experience. From the initial concept inspired by Red Dead Redemption 2 to the final implementation with all its features, every challenge taught me something new. I gained valuable knowledge in embedded systems programming, hardware integration, game design, and problem-solving under real-time constraints.
+Working on this project has been an incredibly rewarding experience. From the initial concept inspired by a side mission from Red Dead Redemption 2 to the final implementation with all its features, every challenge taught me something new. I gained valuable knowledge in embedded systems programming, hardware integration, game design, and problem-solving under real-time constraints.
 
 Debugging timing issues, optimizing memory usage, and implementing smooth gameplay mechanics pushed me to think creatively and understand the Arduino platform at a deeper level.
 
