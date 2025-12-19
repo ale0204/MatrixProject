@@ -1305,12 +1305,12 @@ void GameEngine::showLevelStats()
     matrixDisplay.clear();
 }
 
-void GameEngine::drawIcon(const byte pattern[8])
+void GameEngine::drawIcon(const byte pattern[MatrixConstants::SIZE])
 {
     matrixDisplay.clear();
-    for (uint8_t row = 0; row < 8; row++) {
-    for (uint8_t col = 0; col < 8; col++) {
-            bool isLit = (pattern[row] >> (7 - col)) & 0x01;
+    for (uint8_t row = 0; row < MatrixConstants::SIZE; row++) {
+    for (uint8_t col = 0; col < MatrixConstants::SIZE; col++) {
+            bool isLit = (pattern[row] >> (MatrixConstants::SIZE - 1 - col)) & 0x01;
             if (isLit) {
                 matrixDisplay.setLed(col, row, true);
             }

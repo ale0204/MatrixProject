@@ -6,8 +6,8 @@ PhotoResistor::PhotoResistor(byte pin)
     , smoothedValue(0)
     , readIndex(0)
     , total(0)
-    , darkThreshold(DEFAULT_DARK_THRESHOLD)      // 300 (default)
-    , brightThreshold(DEFAULT_BRIGHT_THRESHOLD)  // 700 (default)
+    , darkThreshold(DEFAULT_DARK_THRESHOLD)
+    , brightThreshold(DEFAULT_BRIGHT_THRESHOLD)
 {
         for (uint8_t i = 0; i < SMOOTHING_SAMPLES; i++) {
         readings[i] = 0;
@@ -31,8 +31,6 @@ void PhotoResistor::update()
 {
         rawValue = analogRead(sensorPin);
     
-    // Smoothing (running average)
-    // Subtract the oldest value from total
     total -= readings[readIndex];
     
         readings[readIndex] = rawValue;
@@ -51,11 +49,8 @@ uint8_t PhotoResistor::getBrightness() const
         return map(smoothedValue, 0, 1023, 0, 100);
 }
 
-// ========== THRESHOLD CONFIGURATION ==========
-
 void PhotoResistor::setDarkThreshold(int threshold)
 {
-    // Validation (0-1023)
     if (threshold < 0) threshold = 0;
     if (threshold > 1023) threshold = 1023;
     
@@ -64,7 +59,6 @@ void PhotoResistor::setDarkThreshold(int threshold)
 
 void PhotoResistor::setBrightThreshold(int threshold)
 {
-    // Validation (0-1023)
     if (threshold < 0) threshold = 0;
     if (threshold > 1023) threshold = 1023;
     
@@ -76,7 +70,6 @@ void PhotoResistor::calibrateDarkness()
         update();      
             darkThreshold = smoothedValue + 50;
     
-    // Validare
     if (darkThreshold > 1023) darkThreshold = 1023;
 }
 
@@ -85,11 +78,8 @@ void PhotoResistor::calibrateBrightness()
         update();      
         brightThreshold = smoothedValue - 50;
     
-    // Validation
     if (brightThreshold < 0) brightThreshold = 0;
 }
-
-// ========== DEBUG ========== 
 
 void PhotoResistor::printDebug() const
 {

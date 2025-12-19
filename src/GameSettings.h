@@ -31,7 +31,7 @@ public:
     void setDifficulty(uint8_t diff);
     const char* getDifficultyName() const;
     
-    // Score Multiplier (calculat bazat pe starting level)
+    // Score Multiplier (calculated based on each starting level)
     float getScoreMultiplier() const;
     
     // EEPROM Management

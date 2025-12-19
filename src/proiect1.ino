@@ -1,22 +1,3 @@
-/**
- * The Miner - Arduino Game
- * Introduction to Robotics, Unibuc 2025-2026
- * 
- * Hardware:
- * - 8x8 LED Matrix with MAX7219 driver
- * - 16x2 LCD display
- * - Analog joystick
- * - Buzzer
- * 
- * Game:
- * - Navigate 16x16 map (4 rooms)
- * - Collect all gold
- * - Reach EXIT to complete level
- * 
- * Author: Alexandra
- * Date: December 2025
- */
-
 #include <Arduino.h>
 #include <LiquidCrystal.h>
 #include <LedControl.h>
