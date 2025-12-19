@@ -103,7 +103,7 @@ Your final score is calculated based on multiple factors:
 | **Gold Collection** | +10 points per gold piece |
 | **Level Completion** | +50 points |
 | **Lives Bonus** | +15 points per remaining life |
-| **Explosives Bonus** (Level 3 only) | +10/20/30 points based on unused explosives |
+| **Explosives Bonus** (Level 4 only) | +10/20/30 points based on unused explosives |
 
 **Difficulty Multipliers**:
 - Easy: 0.8x
