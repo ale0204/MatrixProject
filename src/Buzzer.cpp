@@ -23,7 +23,6 @@ void Buzzer::playTone(uint16_t frequency, uint16_t durationMs)
     }
     
     if (durationMs == 0) {
-        // Continuous tone
         tone(pin, frequency);
     }
     else {
@@ -59,7 +58,6 @@ void Buzzer::startPattern(BuzzerPattern pattern, uint32_t durationMs)
     patternDuration = durationMs;
     isActive = true;
     
-    // Start with appropriate tone for the pattern
     switch (pattern)
     {
         case BuzzerPattern::CONTINUOUS:
@@ -95,7 +93,6 @@ void Buzzer::updatePattern()
     
     switch (currentPattern)
     {
-        // ===== MENU / UI FEEDBACK =====
         case BuzzerPattern::MENU_BEEP:
             if (patternState == 0)
             {
@@ -134,7 +131,6 @@ void Buzzer::updatePattern()
             }
             break;
         
-        // ===== POSITIVE GAME EVENTS =====
         case BuzzerPattern::COLLECT_GOLD:
             if (patternState == 0)
             {
@@ -200,7 +196,7 @@ void Buzzer::updatePattern()
             }
             else if (patternState == 3 && elapsed >= NoteDurations::MEDIUM)
             {
-                playToneInternal(MusicNotes::C5 * 2, NoteDurations::VERY_LONG); // C6 (octave higher)
+                playToneInternal(MusicNotes::C5 * 2, NoteDurations::VERY_LONG);
                 patternState = 4;
                 lastUpdateTime = currentTime;
             }
@@ -210,7 +206,6 @@ void Buzzer::updatePattern()
             }
             break;
         
-        // ===== NEGATIVE GAME EVENTS =====
         case BuzzerPattern::HIT_WALL:
             if (patternState == 0)
             {
@@ -280,9 +275,7 @@ void Buzzer::updatePattern()
             }
             break;
         
-        // ===== SPECIAL EFFECTS =====
         case BuzzerPattern::ROOM_TRANSITION:
-            // Brief ascending tone when entering new room
             if (patternState == 0)
             {
                 playToneInternal(MusicNotes::G4, NoteDurations::VERY_SHORT);
@@ -302,11 +295,9 @@ void Buzzer::updatePattern()
             break;
             
         case BuzzerPattern::CONTINUOUS:
-            // Already playing, nothing to update
             break;
             
         case BuzzerPattern::ALARM_SIREN:
-            // Alternating high/low alarm
             if (elapsed >= SIREN_INTERVAL)
             {
                 if (patternState == 0)
