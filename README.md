@@ -92,7 +92,7 @@ What captivated me most was the **mine exploration sequence** where Arthur must 
 3. **Explosives**: Long-press the joystick button to place an explosive, then move away. After 5 seconds, it explodes in a **cross pattern** (up, down, left, right + center), destroying walls and revealing hidden gold
 4. **Proximity Detection**: When near hidden gold embedded in walls, you'll hear periodic beeping sounds guiding you
 5. **Room Transitions**: The 8x8 viewport smoothly moves between four quadrants of the 16x16 world map as you explore
-6. **Lives System**: Hit a bomb and lose a life. Game over when all lives are lost
+6. **Lives System**: Hit a bomb and lose a life. If an explosive hits you directly, you lose, otherwise(if you're in the near proximity, up, down, left, right, you lose a life). Game over when all lives are lost.
 
 ### Scoring System
 
@@ -114,7 +114,7 @@ Your final score is calculated based on multiple factors:
 
 Customize your experience:
 
-- **Starting Level**: Choose which level to begin from (0-3)
+- **Starting Level**: Choose which level to begin from (1-4)
 - **Difficulty**: 
   - Easy (4 lives, fewer bombs)
   - Normal (3 lives, standard)
