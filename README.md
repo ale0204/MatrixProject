@@ -82,7 +82,7 @@ What captivated me most was the **mine exploration sequence** where Arthur must 
 | Input | Action |
 |-------|--------|
 | **Joystick** | Move the player (UP/DOWN/LEFT/RIGHT) |
-| **Long Press Joystick Button** | Place explosive (available in Level 2-3) |
+| **Long Press Joystick Button** | Place explosive (available in Level 3-4) |
 | **Exit Button (Pin 13)** | Return to main menu |
 
 ### Gameplay Mechanics
