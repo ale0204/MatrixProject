@@ -6,7 +6,7 @@
 Welcome to my LED Matrix game project developed for the **Introduction to Robotics** course!  
 This repository contains the full implementation of my **8x8 LED Matrix Game**, built using **Arduino**, an **LCD display**, and **joystick input**, following the official project requirements.
 
-This project started from a basic interactive demo for **Checkpoint 1** and expanding into a fully featured game with menus, settings, animations, and scoring.
+This project started from a basic interactive demo for **Checkpoint 1** expanding into a fully featured game with menus, settings, animations, and scoring.
 
 ---
 
