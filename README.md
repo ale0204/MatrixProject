@@ -133,15 +133,15 @@ Press the **Exit Button** or **long-press the joystick** in settings to save and
 | Component | Quantity | Purpose |
 |-----------|----------|---------|
 | Arduino Uno | 1 | Main microcontroller |
-| 8x8 LED Matrix (MAX7219) | 1 | Game display |
+| 8x8 LED Matrix with MAX7219 | 1 | Game display |
 | 16x2 LCD Display | 1 | Menu and game information |
 | Joystick Module | 1 | Player input and menu navigation |
 | Buzzer | 1 | Sound effects |
 | Photoresistor | 1 | Light detection for bomb visibility |
 | Push Button | 1 | Exit/Save button |
-| Resistors (10k) | 2 | Photoresistor voltage divider and button pull-down |
+| Resistors (10k and 220) | 3 | Photoresistor voltage divider, button and for MAX7219 |
 | Breadboard | 1 | Component connections |
-| Jumper Wires | ~30 | Circuit connections |
+| Jumper Wires | around 30 | Circuit connections |
 
 ---
 
