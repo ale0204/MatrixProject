@@ -224,7 +224,6 @@ MatrixProject/
 ├── GameSettings.cpp/h         # Game configuration persistence
 ├── SystemSettings.cpp/h       # Hardware settings (brightness, sound)
 │
-├── HIGHSCORE_IMPLEMENTATION.md
 └── README.md
 ```
 
