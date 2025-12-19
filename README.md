@@ -177,7 +177,7 @@ Press the **Exit Button** or **long-press the joystick** in settings to save and
 ### Wiring Notes
 
 - **Photoresistor**: Connected in voltage divider configuration with 10kΩ pull-down resistor
-- **Push Button**: Connected with 10kΩ pull-down resistor
+- **Push Button**: Connected with 10k pull-down resistor
 - **LCD Backlight**: Driven via PWM on pin 9 for brightness control
 - **Joystick**: Center button connected to A2 with internal pull-up
 
