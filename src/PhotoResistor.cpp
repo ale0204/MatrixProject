@@ -32,7 +32,7 @@ void PhotoResistor::update()
         rawValue = analogRead(sensorPin);
     
     // Smoothing (running average)
-    // Scade cea mai veche valoare din total
+    // Subtract the oldest value from total
     total -= readings[readIndex];
     
         readings[readIndex] = rawValue;
@@ -51,11 +51,11 @@ uint8_t PhotoResistor::getBrightness() const
         return map(smoothedValue, 0, 1023, 0, 100);
 }
 
-// ========== THRESHOLD CONFIGURATION ========== ✨
+// ========== THRESHOLD CONFIGURATION ==========
 
 void PhotoResistor::setDarkThreshold(int threshold)
 {
-    // Validare (0-1023)
+    // Validation (0-1023)
     if (threshold < 0) threshold = 0;
     if (threshold > 1023) threshold = 1023;
     
@@ -64,7 +64,7 @@ void PhotoResistor::setDarkThreshold(int threshold)
 
 void PhotoResistor::setBrightThreshold(int threshold)
 {
-    // Validare (0-1023)
+    // Validation (0-1023)
     if (threshold < 0) threshold = 0;
     if (threshold > 1023) threshold = 1023;
     
@@ -85,7 +85,7 @@ void PhotoResistor::calibrateBrightness()
         update();      
         brightThreshold = smoothedValue - 50;
     
-    // Validare
+    // Validation
     if (brightThreshold < 0) brightThreshold = 0;
 }
 
@@ -106,10 +106,10 @@ void PhotoResistor::printDebug() const
     Serial.print("] | Status: ");
     
     if (isDark()) {
-        Serial.println("DARK 🌑");
+        Serial.println("DARK");
     } else if (isBright()) {
-        Serial.println("BRIGHT ☀️");
+        Serial.println("BRIGHT");
     } else {
-        Serial.println("NORMAL 🌤️");
+        Serial.println("NORMAL");
     }
 }

@@ -103,7 +103,7 @@ void GameSettings::loadFromEEPROM()
     startingLevel = EEPROM.read(EEPROM_ADDR + 1);
     difficulty = EEPROM.read(EEPROM_ADDR + 2);
     
-    // Validare
+    // Validation
     if (startingLevel > MapConstants::MAX_LEVEL) {
         startingLevel = MapConstants::LEVEL_0;
     }
