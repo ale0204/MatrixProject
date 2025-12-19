@@ -139,7 +139,7 @@ Press the **Exit Button** or **long-press the joystick** in settings to save and
 | Buzzer | 1 | Sound effects |
 | Photoresistor | 1 | Light detection for bomb visibility |
 | Push Button | 1 | Exit/Save button |
-| Resistors (10kΩ) | 2 | Photoresistor voltage divider and button pull-down |
+| Resistors (10k) | 2 | Photoresistor voltage divider and button pull-down |
 | Breadboard | 1 | Component connections |
 | Jumper Wires | ~30 | Circuit connections |
 
@@ -190,7 +190,7 @@ Watch the full gameplay and feature demonstration:
 **[YouTube Demo Video](https://youtu.be/H0vetHM-Wng?si=7Vo4IzWAbMuWqmax)**
 
 The video includes:
-- Complete walkthrough of all 4 levels
+- A short demo of the game
 - Menu navigation and settings configuration
 - Explosive mechanics demonstration
 - Light-based bomb detection showcase
@@ -592,66 +592,3 @@ bool PhotoResistor::isBright() const {
 - Magic byte validation for data integrity
 
 ---
-
-## Educational Value
-
-This project demonstrates key concepts from the **Introduction to Robotics** course:
-
-1. **Embedded Systems Programming**: Real-time constraints, memory management, hardware abstraction
-2. **Game Design**: State machines, level design, difficulty balancing, user feedback
-3. **Hardware Integration**: Multiple peripherals (matrix, LCD, sensors, audio)
-4. **Data Structures**: 2D arrays, circular buffers, state enums
-5. **Algorithms**: Collision detection, pathfinding, proximity detection
-6. **User Experience**: Menu navigation, persistent settings, audio/visual feedback
-
-The modular architecture and well-documented code also serve as a learning resource for other students exploring Arduino game development.
-
----
-
-## Future Enhancements
-
-Potential improvements for future versions:
-
-- [ ] Add enemy AI with pathfinding
-- [ ] Implement power-ups (invincibility, double points)
-- [ ] Create procedurally generated levels
-- [ ] Add multiplayer mode with second joystick
-- [ ] Design custom PCB for cleaner assembly
-- [ ] Port to ESP32 for Bluetooth highscore sharing
-- [ ] Add pause menu during gameplay
-- [ ] Implement animation system for explosions
-
----
-
-## License
-
-This project is open-source and available for educational purposes.
-
----
-
-## Author
-
-**Neamtu Alexandra**  
-*Introduction to Robotics - University of Bucharest, FMI*  
-*December 2025*
-
----
-
-## Acknowledgments
-
-- **Red Dead Redemption 2** by Rockstar Games for gameplay inspiration
-- Arduino community for libraries and documentation
-- MAX7219 LED matrix library developers
-- **Introduction to Robotics** course instructors at University of Bucharest
-
----
-
-## Contact & Links
-
-- **GitHub Repository**: [github.com/ale0204/MatrixProject](https://github.com/ale0204/MatrixProject)
-- **Video Demo**: [YouTube](https://youtu.be/H0vetHM-Wng?si=7Vo4IzWAbMuWqmax)
-- **Implementation Guide**: See [HIGHSCORE_IMPLEMENTATION.md](HIGHSCORE_IMPLEMENTATION.md)
-
----
-
-*Made with love for Introduction to Robotics course*
