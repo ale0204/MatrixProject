@@ -1311,7 +1311,8 @@ void GameEngine::drawIcon(const byte pattern[MatrixConstants::SIZE])
     for (uint8_t row = 0; row < MatrixConstants::SIZE; row++) {
     for (uint8_t col = 0; col < MatrixConstants::SIZE; col++) {
             bool isLit = (pattern[row] >> (MatrixConstants::SIZE - 1 - col)) & 0x01;
-            if (isLit) {
+            if (isLit) 
+            {
                 matrixDisplay.setLed(col, row, true);
             }
         }

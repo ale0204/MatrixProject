@@ -9,7 +9,6 @@ class GameSettings
 private:
     uint8_t startingLevel;   
     uint8_t difficulty;      
-    
     static const uint16_t EEPROM_ADDR = 0;      
     static const uint8_t MAGIC_BYTE = 0xA5;
     

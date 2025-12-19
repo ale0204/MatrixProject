@@ -24,7 +24,6 @@ MatrixDisplay matrixDisplay(MatrixPins::DIN, MatrixPins::CLK, MatrixPins::LOAD);
 Joystick joystick(JoystickPins::X_PIN, JoystickPins::Y_PIN, JoystickPins::SW_PIN);
 Buzzer buzzer(BuzzerPins::BUZZER_PIN);
 PhotoResistor photoResistor(PhotoResistorPins::SENSOR_PIN);
-
 GameEngine* gameEngine = nullptr;
 
 unsigned long startupMessageTime = 0;

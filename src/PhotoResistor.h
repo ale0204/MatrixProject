@@ -9,7 +9,6 @@ private:
     byte sensorPin;
     int rawValue;
     int smoothedValue;
-    
     static const uint8_t SMOOTHING_SAMPLES = 5;
     int readings[SMOOTHING_SAMPLES];
     uint8_t readIndex;

@@ -23,7 +23,8 @@ void GameSettings::setDifficulty(uint8_t diff)
 
 const char* GameSettings::getDifficultyName() const
 {
-    switch (difficulty) {
+    switch (difficulty) 
+    {
         case EASY:   return "Easy";
         case NORMAL: return "Normal";
         case HARD:   return "Hard";

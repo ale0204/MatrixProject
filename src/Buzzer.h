@@ -57,7 +57,6 @@ enum class BuzzerPattern : uint8_t {
 class Buzzer {
 private:
     const uint8_t pin;
-    
     static constexpr uint16_t SIREN_INTERVAL = 300;
     
     BuzzerPattern currentPattern;

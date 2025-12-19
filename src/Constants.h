@@ -232,8 +232,7 @@ namespace JoystickConstants
 {
     constexpr byte DEADZONE = 30;
     constexpr byte CENTER_POSITION = 128;
-    constexpr uint16_t MOVEMENT_COOLDOWN_MS = 200;
-    
+    constexpr uint16_t MOVEMENT_COOLDOWN_MS = 200;   
     constexpr uint16_t ANALOG_MIN = 0;
     constexpr uint16_t ANALOG_MAX = 1023;
     constexpr byte MAPPED_MIN = 0;
