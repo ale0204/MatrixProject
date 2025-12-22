@@ -600,4 +600,4 @@ Debugging timing issues, optimizing memory usage, and implementing smooth gamepl
 
 This project has strengthened my appreciation for the complexity behind even simple games and the importance of clean, modular code architecture, and its been a pleasure working on it
 
-Note*: During development, GPT was used to assist with naming conventions for constants and eliminating some magic numbers I missed, helping improve code readability and maintainability. It was hard for me to keep track of all of them, espacially this being the first time I've gotten myself into a project as big as this one.
+Note*: During development, GPT was used to assist with naming conventions for constants and eliminating some magic numbers I missed, helping improve code readability and maintainability. It was hard for me to keep track of all of them, especially this being the first time I've gotten myself into a project as big as this one.
